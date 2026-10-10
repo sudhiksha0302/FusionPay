@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+
+<section class="container">
+
+<h1>Purchase History</h1>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Product</th>
+
+<th>Amount</th>
+
+<th>EMI</th>
+
+<th>Monthly EMI</th>
+
+<th>Date</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr *ngFor="let t of transactions">
+
+<td>{{t.purchaseId}}</td>
+
+<td>{{t.productName}}</td>
+
+<td>₹ {{t.totalAmount}}</td>
+
+<td>{{t.emiDuration}} Months</td>
+
+<td>₹ {{t.emiAmount | number:'1.2-2'}}</td>
+
+<td>{{t.purchaseDate}}</td>
+
+<td>
+
+<span class="active">
+
+{{t.status}}
+
+</span>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<app-footer></app-footer>

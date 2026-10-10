@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+
+<section class="profile-container" *ngIf="user">
+
+  <div class="profile-grid">
+
+    <!-- Personal -->
+
+    <div class="card">
+
+      <h2>👤 Personal Information</h2>
+
+      <p><strong>Name</strong><br>{{user.name}}</p>
+
+      <p><strong>Email</strong><br>{{user.email}}</p>
+
+      <p><strong>Username</strong><br>{{user.username}}</p>
+
+      <p><strong>Phone</strong><br>{{user.phoneNumber}}</p>
+
+      <p><strong>Date Of Birth</strong><br>{{user.dateOfBirth}}</p>
+
+      <p><strong>Address</strong><br>{{user.address}}</p>
+
+      <p><strong>Verified</strong><br>{{user.verified ? 'Yes' : 'No'}}</p>
+
+      <p><strong>Activated</strong><br>{{user.activated ? 'Yes' : 'No'}}</p>
+
+    </div>
+
+    <!-- Bank -->
+
+    <div class="card" *ngIf="user">
+
+      <h2>🏦 Bank Details</h2>
+
+      <p><strong>Bank Name</strong><br>{{bank.bankName}}</p>
+
+      <p><strong>Account Number</strong><br>{{bank.accountNumber}}</p>
+
+      <p><strong>IFSC Code</strong><br>{{bank.ifscCode}}</p>
+
+    </div>
+
+    <!-- Card -->
+
+    <div class="card" *ngIf="user">
+
+      <h2>💳 Credit Card</h2>
+
+      <p><strong>Card Type</strong><br>{{card.cardType}}</p>
+
+      <p><strong>Card Number</strong><br>{{card.cardNumber}}</p>
+
+      <p><strong>Joining Fee</strong><br>₹ {{card.joiningFee}}</p>
+
+      <p><strong>Total Limit</strong><br>₹ {{card.totalLimit}}</p>
+
+      <p><strong>Available Limit</strong><br>₹ {{card.availableLimit}}</p>
+
+      <p><strong>Expiry Date</strong><br>{{card.expiryDate}}</p>
+
+      <p><strong>Status</strong><br>{{card.cardStatus}}</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<app-footer></app-footer>

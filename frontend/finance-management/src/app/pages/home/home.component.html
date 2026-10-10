@@ -1,0 +1,370 @@
+<app-navbar></app-navbar>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <span class="badge">
+            India's Trusted EMI Platform
+        </span>
+
+        <h1>
+
+            Buy Now.
+
+            <br>
+
+            Pay Later.
+
+        </h1>
+
+        <p>
+
+            Purchase your favourite products with flexible EMI plans using
+            Gold and Titanium EMI Cards.
+
+            Secure, Fast and Hassle-Free.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a routerLink="/register">
+
+                <button class="register-btn">
+
+                    Get Started
+
+                </button>
+
+            </a>
+
+            <a routerLink="/login">
+
+                <button class="login-btn">
+
+                    Login
+
+                </button>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <img
+            src="/images/card.png"
+            alt="EMI Card">
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+    <div class="stat">
+
+        <h2>25K+</h2>
+
+        <p>Happy Customers</p>
+
+    </div>
+
+    <div class="stat">
+
+        <h2>₹15 Cr+</h2>
+
+        <p>Transactions</p>
+
+    </div>
+
+    <div class="stat">
+
+        <h2>99%</h2>
+
+        <p>Approval Rate</p>
+
+    </div>
+
+    <div class="stat">
+
+        <h2>24×7</h2>
+
+        <p>Support</p>
+
+    </div>
+
+</section>
+
+<!-- EMI CARDS -->
+
+<section class="card-section">
+
+    <h2>
+
+        Choose Your EMI Card
+
+    </h2>
+
+    <div class="card-container">
+
+        <div class="gold-card">
+
+            <h3>
+
+                Gold Card
+
+            </h3>
+
+            <h1>
+
+                ₹40,000
+
+            </h1>
+
+            <ul>
+
+                <li>✔ Zero Cost EMI</li>
+
+                <li>✔ Shopping Benefits</li>
+
+                <li>✔ Low Joining Fee</li>
+
+                <li>✔ Easy Approval</li>
+
+            </ul>
+
+        </div>
+
+        <div class="titanium-card">
+
+            <h3>
+
+                Titanium Card
+
+            </h3>
+
+            <h1>
+
+                ₹80,000
+
+            </h1>
+
+            <ul>
+
+                <li>✔ Premium Shopping</li>
+
+                <li>✔ Higher Credit Limit</li>
+
+                <li>✔ Faster Approval</li>
+
+                <li>✔ Exclusive Offers</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURED PRODUCTS -->
+
+<section class="products">
+
+    <h2>
+
+        Featured Products
+
+    </h2>
+
+    <p class="subtitle">
+
+        Browse products available with EMI
+
+    </p>
+
+    <div *ngIf="loading" class="loading">
+
+        Loading Products...
+
+    </div>
+
+    <div *ngIf="error">
+
+        {{error}}
+
+    </div>
+
+    <div class="product-grid">
+
+        <div
+            class="product-card"
+            *ngFor="let product of products">
+
+            <img
+                [src]="product.imageUrl"
+                alt="Product">
+
+            <h3>
+
+                {{product.productName}}
+
+            </h3>
+
+            <p>
+
+                {{product.brand}}
+
+            </p>
+
+            <h2>
+
+                ₹ {{product.price}}
+
+            </h2>
+
+            <button>
+
+                View Details
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section class="why-us">
+
+    <h2>
+
+        Why Choose Finance Management?
+
+    </h2>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+
+            💳
+
+            <h3>
+
+                Easy EMI
+
+            </h3>
+
+            <p>
+
+                Convert purchases into flexible monthly installments.
+
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            🔒
+
+            <h3>
+
+                Secure Transactions
+
+            </h3>
+
+            <p>
+
+                Bank-grade security for every payment.
+
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            ⚡
+
+            <h3>
+
+                Instant Approval
+
+            </h3>
+
+            <p>
+
+                Quick verification and approval process.
+
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            🏆
+
+            <h3>
+
+                Trusted Service
+
+            </h3>
+
+            <p>
+
+                Thousands of satisfied customers.
+
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            🎁
+
+            <h3>
+
+                Exclusive Offers
+
+            </h3>
+
+            <p>
+
+                Cashback and discounts on selected products.
+
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            📞
+
+            <h3>
+
+                24×7 Support
+
+            </h3>
+
+            <p>
+
+                Dedicated customer support whenever you need it.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<app-footer></app-footer>

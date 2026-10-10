@@ -1,0 +1,125 @@
+<app-navbar></app-navbar>
+
+<div class="dashboard" *ngIf="!loading">
+
+    <div class="welcome">
+
+        <h1>
+
+            Welcome {{user.name}} 👋
+
+        </h1>
+
+        <p>
+
+            Manage your Finance Account
+
+        </p>
+
+    </div>
+
+    <div class="profile-card">
+
+        <h2>Profile Details</h2>
+
+        <div class="row">
+
+            <span>Name</span>
+
+            <b>{{user.name}}</b>
+
+        </div>
+
+        <div class="row">
+
+            <span>Email</span>
+
+            <b>{{user.email}}</b>
+
+        </div>
+
+        <div class="row">
+
+            <span>Phone</span>
+
+            <b>{{user.phoneNumber}}</b>
+
+        </div>
+
+        <div class="row">
+
+            <span>Username</span>
+
+            <b>{{user.username}}</b>
+
+        </div>
+
+        <div class="row">
+
+            <span>Address</span>
+
+            <b>{{user.address}}</b>
+
+        </div>
+
+        <div class="row">
+
+            <span>Verified</span>
+
+            <b>{{user.verified ? 'Yes' : 'No'}}</b>
+
+        </div>
+
+        <div class="row">
+
+            <span>Activated</span>
+
+            <b>{{user.activated ? 'Yes' : 'No'}}</b>
+
+        </div>
+
+    </div>
+
+    <div class="quick-actions">
+
+        <h2>Quick Actions</h2>
+
+        <div class="action-grid">
+
+            <a routerLink="/products" class="card">
+
+                🛍️
+
+                <h3>Products</h3>
+
+            </a>
+
+            <a routerLink="/transactions" class="card">
+
+                💳
+
+                <h3>Transactions</h3>
+
+            </a>
+
+            <a routerLink="/profile" class="card">
+
+                👤
+
+                <h3>Profile</h3>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="loading" *ngIf="loading">
+
+    Loading Dashboard...
+
+</div>
+
+<app-footer></app-footer>

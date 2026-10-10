@@ -1,0 +1,27 @@
+
+# Local Git backups
+FusionPay/.git-backup/
+FusionPay-backup.bundle
+
+# IDE-generated files
+backend/RemoteSystemsTempFiles/
+**/.project
+**/.classpath
+**/.settings/
+
+# Build outputs and dependencies
+**/target/
+**/node_modules/
+**/dist/
+**/.angular/
+**/.env
+**/.env.*
+!.env.example
+
+# Local nested project and backup
+FusionPay/
+FusionPay-backup.bundle
+
+
+# Unidentified local file
+/ionPay finance management project*

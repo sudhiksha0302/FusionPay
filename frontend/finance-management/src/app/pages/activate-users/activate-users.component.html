@@ -1,0 +1,94 @@
+<div class="users-page">
+
+    <div class="page-header">
+
+        <h1>Activate Users</h1>
+
+        <p>Approve newly registered users.</p>
+
+    </div>
+
+    <div class="table-card">
+
+        <table class="table">
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Verified</th>
+                    <th>Activated</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr *ngFor="let user of users">
+
+                    <td>{{user.userId}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.email}}</td>
+
+                    <td>
+
+                        <span
+                        [class.text-success]="user.verified"
+                        [class.text-danger]="!user.verified">
+
+                            {{user.verified ? 'Yes' : 'No'}}
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <span
+                        [class.text-success]="user.activated"
+                        [class.text-danger]="!user.activated">
+
+                            {{user.activated ? 'Yes' : 'No'}}
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <button
+                            class="activate-btn"
+                            (click)="activateUser(user.userId)">
+
+                            Activate
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr *ngIf="users.length==0">
+
+                    <td colspan="7">
+
+                        🎉 No users pending for activation.
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

@@ -1,0 +1,93 @@
+<nav>
+
+<div class="logo" routerLink="/">
+💳 FusionPay
+</div>
+
+<ul>
+
+<li>
+
+<a routerLink="/">Home</a>
+
+</li>
+
+<li *ngIf="!isLoggedIn">
+
+<a routerLink="/login">
+
+Login
+
+</a>
+
+</li>
+
+<li *ngIf="!isLoggedIn">
+
+<a routerLink="/register">
+
+Register
+
+</a>
+
+</li>
+
+<li *ngIf="isLoggedIn">
+
+<a routerLink="/dashboard">
+
+Dashboard
+
+</a>
+
+</li>
+
+<li *ngIf="isLoggedIn">
+
+<a routerLink="/products">
+
+Products
+
+</a>
+
+</li>
+
+<li *ngIf="isLoggedIn">
+
+<a routerLink="/transactions">
+
+Transactions
+
+</a>
+
+</li>
+
+<li *ngIf="isLoggedIn">
+
+<a routerLink="/profile">
+
+Profile
+
+</a>
+
+</li>
+
+<li *ngIf="isLoggedIn">
+
+<a href="javascript:void(0)" (click)="logout()">
+Logout
+</a>
+
+</li>
+
+</ul>
+
+<div
+class="user"
+*ngIf="isLoggedIn">
+
+👋 {{username}}
+
+</div>
+
+</nav>

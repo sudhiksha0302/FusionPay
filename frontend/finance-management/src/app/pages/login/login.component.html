@@ -1,0 +1,82 @@
+<div class="login-container">
+
+    <div class="login-card">
+
+        <h2>💳 Finance Management System</h2>
+
+        <p>Welcome Back</p>
+
+        <div class="success-message" *ngIf="successMessage">
+            {{ successMessage }}
+        </div>
+
+        <div class="error-message" *ngIf="errorMessage">
+            {{ errorMessage }}
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+            <!-- Login Role -->
+            <div class="role-selection">
+
+                <span class="role-title">
+                    Login As
+                </span>
+
+                <label>
+
+                    <input
+                        type="radio"
+                        formControlName="role"
+                        value="USER">
+
+                    <span>User</span>
+
+                </label>
+
+                <label>
+
+                    <input
+                        type="radio"
+                        formControlName="role"
+                        value="ADMIN">
+
+                    <span>Admin</span>
+
+                </label>
+
+            </div>
+
+            <input
+                type="text"
+                placeholder="👤 Username"
+                formControlName="username">
+
+            <input
+                type="password"
+                placeholder="🔒 Password"
+                formControlName="password">
+
+            <button type="submit">
+                Login →
+            </button>
+
+        </form>
+
+        <p class="error">{{message}}</p>
+
+        <div class="links">
+
+            <a routerLink="/forgot-password">
+                Forgot Password?
+            </a>
+
+            <a routerLink="/register">
+                New User? Register Here
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

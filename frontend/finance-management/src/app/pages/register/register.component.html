@@ -1,0 +1,288 @@
+<div class="register-page">
+
+    <!-- Left Section -->
+
+    <div class="left-section">
+
+        <h1>Finance Management System</h1>
+
+        <h2>Zero Cost EMI Card</h2>
+
+        <p>
+            Shop smarter with Gold & Titanium EMI Cards.
+            Register today and enjoy hassle-free monthly installments,
+            instant approval and secure transactions.
+        </p>
+
+        <img src="images/emi.png" alt="Finance">
+
+    </div>
+
+    <!-- Right Section -->
+
+    <div class="register-card">
+
+        <h2>Create Account</h2>
+
+        <p class="subtitle">Join us and start your EMI journey.</p>
+
+        <div class="success-message" *ngIf="successMessage">
+    {{ successMessage }}
+</div>
+
+<div class="error-message" *ngIf="errorMessage">
+    {{ errorMessage }}
+</div>
+
+        <form [formGroup]="registerForm"
+              (ngSubmit)="register()">
+
+            <!-- Name -->
+
+            <div class="form-group">
+
+                <input
+                        type="text"
+                        placeholder="Full Name"
+                        formControlName="name">
+
+                <small *ngIf="submitted && f['name'].errors">
+
+                    <span *ngIf="f['name'].errors?.['required']">
+                        Name is required
+                    </span>
+
+                    <span *ngIf="f['name'].errors?.['pattern']">
+                        Only alphabets are allowed
+                    </span>
+
+                    <span *ngIf="f['name'].errors?.['minlength']">
+                        Minimum 3 characters required
+                    </span>
+
+                </small>
+
+            </div>
+
+            <!-- DOB -->
+
+            <div class="form-group">
+
+                <input
+                        type="date"
+                        formControlName="dateOfBirth">
+
+                <small *ngIf="submitted && f['dateOfBirth'].errors">
+
+                    Date of Birth is required
+
+                </small>
+
+            </div>
+
+            <!-- Email -->
+
+            <div class="form-group">
+
+                <input
+                        type="email"
+                        placeholder="Email Address"
+                        formControlName="email">
+
+                <small *ngIf="submitted && f['email'].errors">
+
+                    <span *ngIf="f['email'].errors?.['required']">
+
+                        Email is required
+
+                    </span>
+
+                    <span *ngIf="f['email'].errors?.['email']">
+
+                        Invalid Email Address
+
+                    </span>
+
+                </small>
+
+            </div>
+
+            <!-- Phone -->
+
+            <div class="form-group">
+
+                <input
+                        type="text"
+                        placeholder="Phone Number"
+                        formControlName="phoneNumber">
+
+                <small *ngIf="submitted && f['phoneNumber'].errors">
+
+                    Enter valid 10-digit mobile number
+
+                </small>
+
+            </div>
+
+            <!-- Username -->
+
+            <div class="form-group">
+
+                <input
+                        type="text"
+                        placeholder="Username"
+                        formControlName="username">
+
+                <small *ngIf="submitted && f['username'].errors">
+
+                    Username should be 5-20 characters.
+
+                </small>
+
+            </div>
+
+            <!-- Password -->
+
+            <div class="form-group">
+
+                <input
+                        [type]="hidePassword ? 'password' : 'text'"
+                        placeholder="Password"
+                        formControlName="password">
+
+                <small *ngIf="submitted && f['password'].errors">
+
+                    Password must contain uppercase,
+                    lowercase, number and special character.
+
+                </small>
+
+            </div>
+
+            <!-- Address -->
+
+            <div class="form-group full-width">
+
+                <textarea
+
+                        rows="3"
+
+                        placeholder="Address"
+
+                        formControlName="address">
+
+                </textarea>
+
+                <small *ngIf="submitted && f['address'].errors">
+
+                    Address is required.
+
+                </small>
+
+            </div>
+
+            <!-- Bank -->
+
+            <div class="form-group">
+
+                <input
+
+                        type="text"
+
+                        placeholder="Bank Name"
+
+                        formControlName="bankName">
+
+                <small *ngIf="submitted && f['bankName'].errors">
+
+                    Bank Name is required
+
+                </small>
+
+            </div>
+
+            <!-- Account -->
+
+            <div class="form-group">
+
+                <input
+
+                        type="text"
+
+                        placeholder="Account Number"
+
+                        formControlName="accountNumber">
+
+                <small *ngIf="submitted && f['accountNumber'].errors">
+
+                    Enter valid Account Number
+
+                </small>
+
+            </div>
+
+            <!-- IFSC -->
+
+            <div class="form-group">
+
+                <input
+
+                        type="text"
+
+                        placeholder="IFSC Code"
+
+                        formControlName="ifscCode">
+
+                <small *ngIf="submitted && f['ifscCode'].errors">
+
+                    Invalid IFSC Code
+
+                </small>
+
+            </div>
+
+            <!-- Card -->
+
+            <div class="form-group">
+
+                <select formControlName="cardType">
+
+                    <option value="">Choose Card</option>
+
+                    <option value="GOLD">Gold Card</option>
+
+                    <option value="TITANIUM">Titanium Card</option>
+
+                </select>
+
+                <small *ngIf="submitted && f['cardType'].errors">
+
+                    Please select a Card
+
+                </small>
+
+            </div>
+
+            <button type="submit">
+
+                Create Account
+
+            </button>
+
+        </form>
+
+        <p class="login-link">
+
+            Already have an account?
+
+            <a routerLink="/login">
+
+                Login
+
+            </a>
+
+        </p>
+
+    </div>
+
+</div>

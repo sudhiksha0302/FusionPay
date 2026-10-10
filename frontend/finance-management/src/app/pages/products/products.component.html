@@ -1,0 +1,83 @@
+<app-navbar></app-navbar>
+
+<section class="products-page">
+
+    <div class="header">
+
+        <h1>Explore Products</h1>
+
+        <p>Choose your favourite product and buy instantly using your EMI Card.</p>
+
+    </div>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            placeholder="Search Product..."
+            [(ngModel)]="search"
+            (keyup)="searchProduct()">
+
+    </div>
+
+    <div class="loading" *ngIf="loading">
+
+        Loading Products...
+
+    </div>
+
+    <div class="product-grid" *ngIf="!loading">
+
+        <div class="product-card" *ngFor="let product of products">
+
+            <img
+                [src]="product.imageUrl || 'assets/images/no-image.png'"
+                alt="Product">
+
+            <div class="content">
+
+                <span class="category">
+
+                    {{product.category}}
+
+                </span>
+
+                <h2>
+
+                    {{product.productName}}
+
+                </h2>
+
+                <p>
+
+                    {{product.description}}
+
+                </p>
+
+                <h3>
+
+                    ₹ {{product.price | number}}
+
+                </h3>
+
+                <div class="brand">
+
+                    {{product.brand}}
+
+                </div>
+
+                <button (click)="buy(product)">
+
+                    Buy Now
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,93 @@
+<div class="products-page">
+
+    <div class="page-header">
+
+        <h1>📦 Manage Products</h1>
+
+        <p>
+            View and monitor all finance products available in the system.
+        </p>
+
+    </div>
+
+    <div class="table-card">
+
+        <table class="table">
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Brand</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr *ngFor="let product of products">
+
+                    <td>{{product.productId}}</td>
+
+                    <td>
+
+                        <img
+                            [src]="product.imageUrl"
+                            alt="Product">
+
+                    </td>
+
+                    <td>{{product.productName}}</td>
+
+                    <td>{{product.brand}}</td>
+
+                    <td>{{product.category}}</td>
+
+                    <td class="description">
+
+                        {{product.description}}
+
+                    </td>
+
+                    <td class="price">
+
+                        ₹ {{product.price}}
+
+                    </td>
+
+                    <td>
+
+                        {{product.stock}}
+
+                    </td>
+
+                    <td>
+
+                        <span
+                            [class.instock]="product.active"
+                            [class.outstock]="!product.active">
+
+                            {{product.active ? 'Available' : 'Unavailable'}}
+
+                        </span>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

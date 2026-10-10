@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+
+<div class="purchase-page" *ngIf="!loading">
+
+    <div class="purchase-card">
+
+        <img [src]="product.imageUrl || 'assets/images/no-image.png'">
+
+        <div class="details">
+
+            <h1>{{product.productName}}</h1>
+
+            <p>{{product.description}}</p>
+
+            <h2>₹ {{product.price}}</h2>
+
+            <label>
+
+                EMI Duration
+
+            </label>
+
+            <select [(ngModel)]="emiDuration" (change)="calculateEMI()">
+
+                <option value="3">3 Months</option>
+
+                <option value="6">6 Months</option>
+
+                <option value="9">9 Months</option>
+
+                <option value="12">12 Months</option>
+
+                <option value="18">18 Months</option>
+
+                <option value="24">24 Months</option>
+
+            </select>
+
+            <div class="emi-box">
+
+                Monthly EMI
+
+                <h2>
+
+                    ₹ {{emiAmount | number:'1.2-2'}}
+
+                </h2>
+
+            </div>
+
+            <div class="success" *ngIf="successMessage">
+
+                {{successMessage}}
+
+            </div>
+
+            <div class="error" *ngIf="errorMessage">
+
+                {{errorMessage}}
+
+            </div>
+
+            <button (click)="confirmPurchase()">
+
+                Confirm Purchase
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<app-footer></app-footer>
